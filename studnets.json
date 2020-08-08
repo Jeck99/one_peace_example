@@ -1,0 +1,34 @@
+[
+    {
+        "name": "jacob",
+        "age": 20,
+        "grades": [
+            {
+                "sport": 100,
+                "math2": 100
+            },
+            {
+                "sport": 80,
+                "sport2": 80
+            },
+            {
+                "english": 90
+            }
+        ]
+    },
+    {
+        "name": "jacob",
+        "age": 20,
+        "grades": [
+            {
+                "math": 100
+            },
+            {
+                "sport": 80
+            },
+            {
+                "english": 90
+            }
+        ]
+    }
+]

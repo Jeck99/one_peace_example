@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>One Piece Site</title>
+  <link rel="stylesheet" href="CssProject.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Amatic SC'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- <script src="javascriptFile.js"></script> -->
+</head>
+
+<body>
+  <div id="allDiv">
+  </div>
+  <div style="width: fit-content; margin:0" id="div1">Jacob</div>
+  <div id="demo"></div>
+  <script type="text/javascript">
+    $(document).ready(() => {
+      $("#allDiv").html('<button id="btn">Click Here</button>');
+      $("#btn").click(() => {
+        $("#div1").toggle(1000, () => {
+          $("#btn").css({ "color": "red", "background-color": "green" });
+        });
+      })
+    });
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = () => {
+      if (this.readyState == 4 && this.status == 200) {
+        var respo = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = respo[0];
+      }
+    };
+    xmlhttp.open("GET", "./studnets.json", true);
+    xmlhttp.send();
+  </script>
+</body>
+</html>
